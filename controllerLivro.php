@@ -2,13 +2,14 @@
 	$nome = filter_input(INPUT_POST, "nome");
 	$autor = filter_input(INPUT_POST, "autor");
 	$editora = filter_input(INPUT_POST, "editora");
-	$numEditora = filter_input(INPUT_POST, "numEditora");
+	$numEdicao = filter_input(INPUT_POST, "numEdicao");
 	$genero = filter_input(INPUT_POST, "genero");
 	$descricao = filter_input(INPUT_POST, "descricao");
+	$valor = filter_input(INPUT_POST, "valor");
 	
-	$dados = array ($nome, $autor, $editora, $numEditora, $genero, $descricao);
+	$dados = array ($nome, $autor, $editora, $numEdicao, $genero, $descricao, $valor);
 	
-	include ("livro.php");
+	include ("Livro.php");
 	$liv = new Livro();
-	$liv->cadastrar();
+	$liv->cadastrar($dados);
 ?>
